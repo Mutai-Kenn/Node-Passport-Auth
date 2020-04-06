@@ -1,0 +1,108 @@
+// General styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+$primary-color: #212121;
+$secondary-color: #000;
+$text-color: #fff;
+$warning-color: #ff0047;
+$link-color: #01b7ee;
+$green-color: #d4fd02;
+
+//Body Styles
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-color;
+  color: $secondary-color;
+  min-height: 100vh;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+    background-color: $primary-color;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0.5em;
+
+    h1 {
+      color: $green-color;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    form {
+      .name-field,
+      .password-field,
+      .email-field,
+      .phone-field,
+      .age-field,
+      .birthdate-field {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-top: 1em;
+        label {
+          font-size: 1.2em;
+          margin-bottom: 0.5em;
+          color: $text-color;
+        }
+        input {
+          height: 2.4em;
+          width: 100%;
+          border-radius: 3em;
+          padding: 0.5em 1em;
+          border: none;
+          outline: none;
+          font-size: 1em;
+          color: $link-color;
+          background-color: lighten($color: $primary-color, $amount: 2);
+
+          &:hover {
+            box-shadow: 0 0 9px 4px $text-color;
+          }
+        }
+      }
+      .name-field {
+        margin-top: 2em;
+      }
+      .btn {
+        margin: 2em 0 2em 0;
+        height: 2.4em;
+        width: 100%;
+        font-size: 1em;
+        outline: none;
+        border: none;
+        border-radius: 3em;
+        text-transform: capitalize;
+        color: $link-color;
+        background-color: lighten($color: $primary-color, $amount: 9);
+        &:hover {
+          box-shadow: 0 0 6px 4px $link-color;
+          text-shadow: 0 0 5px $link-color;
+        }
+      }
+    }
+    #error {
+      margin-top: 1em;
+      color: $warning-color;
+    }
+    a {
+      text-decoration: none;
+      color: $text-color;
+      margin-top: 1em;
+      text-transform: capitalize;
+      &:hover {
+        color: $link-color;
+        text-shadow: 0 0 3px $link-color;
+      }
+    }
+  }
+}
