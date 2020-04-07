@@ -20,6 +20,7 @@ mongoose.connect(
 // EJS
 app.use(expressLayouts);
 app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
 app.use("/", require("./routes/index"));

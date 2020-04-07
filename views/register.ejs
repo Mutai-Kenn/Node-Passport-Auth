@@ -1,7 +1,7 @@
 <!-- register Page -->
 <div class="container">
   <h1>signup</h1>
-  <form id="form" action="/" method="GET">
+  <form id="form" action="/users/register" method="post">
     <div class="name-field">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Name" />
@@ -19,8 +19,13 @@
       <input type="number" id="age" name="age" placeholder="Age" />
     </div>
     <div class="birthdate-field">
-      <label for="date">Date of Birth</label>
-      <input type="date" id="date" name="date" placeholder="Date of Birth" />
+      <label for="birthday">Date of Birth</label>
+      <input
+        type="date"
+        id="birthday"
+        name="birthday"
+        placeholder="Date of Birth"
+      />
     </div>
     <div class="password-field">
       <label for="password">Password</label>
@@ -32,16 +37,18 @@
       />
     </div>
     <div class="password-field">
-      <label for="password">Confirm Password</label>
+      <label for="repeat_password">Confirm Password</label>
       <input
         type="password"
-        id="password2"
-        name="password"
-        placeholder="Password"
+        id="repeat_password"
+        name="repeat_password"
+        placeholder="Repeat Password"
       />
     </div>
     <button class="btn" type="submit">register</button>
     <a href="/users/login" class="register">login</a>
-    <div id="error"></div>
+    <div id="error">
+      <%= error.details[0].message%>
+    </div>
   </form>
 </div>
