@@ -4,7 +4,11 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const expressLayouts = require("express-ejs-layouts");
 const PORT = process.env.PORT || 5000;
+const passport = require("passport");
+
 const app = express();
+// Passport confiq
+require("./config/passport")(passport);
 
 // Serving static files(Css and images)
 app.use(express.static("public"));
@@ -21,6 +25,14 @@ mongoose.connect(
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Express Session
+
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect Flash
 
 // Routes
 app.use("/", require("./routes/index"));

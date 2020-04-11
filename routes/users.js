@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const passport = require("passport");
 
 const User = require("../models/User");
 
-const { registerValidation, loginValidation } = require("../validation");
+const { registerValidation } = require("../validation");
 
 // Register Page
 router.get("/register", (req, res) => res.render("register"));
@@ -47,9 +48,12 @@ router.post("/register", async (req, res) => {
 });
 
 //Login User
-router.post("/login", async (req, res) => {
-  const { error } = loginValidation(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+router.post("/login", (req, res, next) => {
+  passport.authenticate("local", {
+    successRedirect: "/dashboard",
+    failureRedirect: "/users/login",
+    failureFlash: true,
+  })(req, res, next);
 });
 
 module.exports = router;
