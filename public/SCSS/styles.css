@@ -138,4 +138,12 @@ body .container a:hover {
   color: #01b7ee;
   text-shadow: 0 0 3px #01b7ee;
 }
+
+body .dashboard {
+  color: #fff;
+}
+
+body .welcome {
+  color: #d4fd02;
+}
 /*# sourceMappingURL=styles.css.map */
