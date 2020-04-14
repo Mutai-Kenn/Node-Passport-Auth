@@ -105,11 +105,21 @@ body {
       }
     }
   }
-
-  .dashboard {
+  .main {
+    min-width: 80vw;
+    min-height: 100vh;
     color: $text-color;
+    .welcome {
+      color: $green-color;
+    }
+    h1 {
+      margin-top: 10vh;
+    }
+    a {
+      color: $green-color;
+    }
   }
-  .welcome {
-    color: $green-color;
+  .tools {
+    color: $text-color;
   }
 }

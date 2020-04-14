@@ -139,11 +139,25 @@ body .container a:hover {
   text-shadow: 0 0 3px #01b7ee;
 }
 
-body .dashboard {
+body .main {
+  min-width: 80vw;
+  min-height: 100vh;
   color: #fff;
 }
 
-body .welcome {
+body .main .welcome {
   color: #d4fd02;
+}
+
+body .main h1 {
+  margin-top: 10vh;
+}
+
+body .main a {
+  color: #d4fd02;
+}
+
+body .tools {
+  color: #fff;
 }
 /*# sourceMappingURL=styles.css.map */
